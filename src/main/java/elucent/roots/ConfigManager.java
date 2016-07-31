@@ -7,7 +7,7 @@ public class ConfigManager {
 	//WORLD
 	public static int oldRootDropChance, verdantSprigDropChance, infernalStemDropChance, dragonsEyeDropChance, berriesDropChance;
 	//CLIENT
-	public static boolean showTabletWave;
+	public static boolean showTabletWave, useShaders;
 	//SPELLS
 	public static String[] disabledComponents;
 	public static int chargeTicks, staffUses, efficiencyBonus;
@@ -33,6 +33,7 @@ public class ConfigManager {
     			"<example>","<another example>"
     			}, "A string list of all disabled components. Valid component names include: \"allium\", \"apple\", \"azurebluet\", \"blueorchid\", \"chorus\", \"dandelion\", \"flareorchid\", \"lilac\", \"lilypad\", \"midnightbloom\", \"netherwart\", \"orangetulip\", \"oxeyedaisy\", \"peony\", \"pinktulip\", \"poisonouspotato\", \"poppy\", \"radiantdaisy\", \"redtulip\", \"rosebush\", \"sunflower\", \"whitetulip\"");
     	disablePVP = config.getBoolean("disablePVP", "spells", false, "Whether or not damaging spells can affect players.");
+		useShaders = config.getBoolean("useShaders", Configuration.CATEGORY_CLIENT, true, "Controls whether Roots' shaders are used. If you're using the GLSL Shaders mod and are having graphical troubles with Runecraft's visuals, you may want to turn this off.");
     	config.save();
 	}
 }

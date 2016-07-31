@@ -22,6 +22,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Roots.MODID, name = Roots.NAME, version = Roots.VERSION, useMetadata = true)
 public class Roots
@@ -47,6 +49,8 @@ public class Roots
     
     @Instance("roots")
     public static Roots instance;
+
+    public static Logger LOGGER = LogManager.getLogger(MODID);
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){

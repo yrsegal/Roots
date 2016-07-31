@@ -9,10 +9,14 @@ import elucent.roots.entity.fx.ParticleMagicLine;
 import elucent.roots.entity.projectile.EntityRitualProjectile;
 import elucent.roots.item.ItemStaff;
 import elucent.roots.model.ModelHolder;
+import elucent.roots.reflection.RootsClientMethodHandles;
+import elucent.roots.render.ClientTickHandler;
 import elucent.roots.render.RitualProjectileRenderFactory;
+import elucent.roots.render.ShaderHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -25,12 +29,17 @@ public class ClientProxy extends CommonProxy {
 		ModelHolder.init();
 		RegistryManager.registerItemRenderers();
 		registerRenders();
+		new RootsClientMethodHandles();
+		MinecraftForge.EVENT_BUS.register(new ClientTickHandler());
+		ShaderHandler.init();
 	}
 	
 	public void init(FMLInitializationEvent event){
 		super.init(event);
 		RegistryManager.registerColorHandlers();
 		RegistryManager.registerEntityRenderers();
+
+
 	}
 	
 	public void postInit(FMLPostInitializationEvent event){
