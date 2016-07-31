@@ -1,0 +1,12 @@
+{
+    "parent" : "item/handheld",
+    "textures" : {
+        "layer0" : "roots:items/debugStaff",
+        "layer1" : "roots:items/staffGlow2",
+        "layer2" : "roots:items/staffGlow1"
+    },
+    "overrides" : [{
+        "predicate" : { "roots:overlay": 1 },
+        "model" : "roots:item/debugWandOverlay"
+    }]
+}

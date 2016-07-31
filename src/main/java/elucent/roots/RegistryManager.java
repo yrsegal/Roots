@@ -233,6 +233,7 @@ public class RegistryManager {
 		 */
 		((ItemDruidKnife)druidKnife).initModel();
 		((DustPetal)dustPetal).initModel();
+		((ItemDebugWand)debugWand).initModel();
 		((ItemPestle)pestle).initModel();
 		((ItemStaff)staff).initModel();
 		((ItemCrystalStaff)crystalStaff).initModel();
@@ -301,6 +302,7 @@ public class RegistryManager {
 	
 	@SideOnly(Side.CLIENT)
 	public static void registerColorHandlers(){
+		Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new ItemDebugWand.ColorHandler(), debugWand);
 		Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new ItemStaff.ColorHandler(), staff);
 		Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new ItemCrystalStaff.ColorHandler(), crystalStaff);
 	}
