@@ -14,7 +14,6 @@ import java.lang.reflect.Field;
 
 import static java.lang.invoke.MethodHandles.publicLookup;
 
-//@SuppressWarnings("unchecked")
 public class RootsClientMethodHandles {
 
     @Nonnull
