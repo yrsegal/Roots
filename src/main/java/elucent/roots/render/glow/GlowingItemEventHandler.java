@@ -76,7 +76,7 @@ public class GlowingItemEventHandler {
             }
         }
 
-        rotateArroundXAndY(f1, f2);
+        rotateAroundXAndY(f1, f2);
         setLightmap();
         rotateArm(partialTicks);
         GlStateManager.enableRescaleNormal();
@@ -140,7 +140,7 @@ public class GlowingItemEventHandler {
         RenderHelper.disableStandardItemLighting();
     }
 
-    private void rotateArroundXAndY(float angle, float angleY) {
+    private void rotateAroundXAndY(float angle, float angleY) {
         GlStateManager.pushMatrix();
         GlStateManager.rotate(angle, 1.0F, 0.0F, 0.0F);
         GlStateManager.rotate(angleY, 0.0F, 1.0F, 0.0F);
