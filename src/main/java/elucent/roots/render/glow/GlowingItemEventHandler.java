@@ -45,7 +45,7 @@ public class GlowingItemEventHandler {
         if (mc.playerController != null && mc.gameSettings.thirdPersonView == 0 && !flag && !mc.gameSettings.hideGUI && !mc.playerController.isSpectator()) {
             GlStateManager.pushMatrix();
             render.enableLightmap();
-            render(e.getPartialTicks(), false, e.isCanceled());
+            render(e.getPartialTicks(), false, !e.isCanceled());
             render.disableLightmap();
             GlStateManager.popMatrix();
 
@@ -124,7 +124,7 @@ public class GlowingItemEventHandler {
 
                 float f4 = enumhand == EnumHand.OFF_HAND ? f : 0.0F;
                 float f6 = 1.0F - (prevProgOff + (progOff - prevProgOff) * partialTicks);
-                render.renderItemInFirstPerson(abstractclientplayer, partialTicks, f1, EnumHand.OFF_HAND, f4, overlay ? GlowingOverlayHelper.overlayStack(stackOff) : stackMain, f6);
+                render.renderItemInFirstPerson(abstractclientplayer, partialTicks, f1, EnumHand.OFF_HAND, f4, overlay ? GlowingOverlayHelper.overlayStack(stackOff) : stackOff, f6);
 
                 if (overlay && stackOff.getItem() instanceof IGlowOverlayable) {
                     IGlowOverlayable item = (IGlowOverlayable) stackOff.getItem();
