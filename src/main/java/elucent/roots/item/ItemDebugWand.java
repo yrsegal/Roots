@@ -2,6 +2,7 @@ package elucent.roots.item;
 
 import elucent.roots.Roots;
 import elucent.roots.Util;
+import elucent.roots.entity.EntityGreaterSprite;
 import elucent.roots.entity.EntitySprite;
 import elucent.roots.entity.EntitySpriteling;
 import elucent.roots.render.ClientTickHandler;
@@ -35,7 +36,7 @@ public class ItemDebugWand extends Item implements IGlowOverlayable {
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
 		if (!world.isRemote){
-			EntitySprite spriteling = new EntitySprite(world);
+			EntityGreaterSprite spriteling = new EntityGreaterSprite(world);
 			spriteling.setPosition(pos.getX()+0.5,pos.getY()+1.5,pos.getZ()+0.5);
 			spriteling.onInitialSpawn(world.getDifficultyForLocation(pos), null);
 			world.spawnEntityInWorld(spriteling);
